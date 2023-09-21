@@ -25,7 +25,7 @@
 ################ Please, change this e-mail address to yours
 
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=example@edu.pucrs.br
+#SBATCH --mail-user=christopher.michel@edu.pucrs.br
 
 ################
 
