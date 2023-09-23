@@ -19,6 +19,7 @@ void sum(char* output, const long unsigned int d, const long unsigned int n) {
     for (digit = 0; digit < d + 11; ++digit) {
         digits[digit] = 0;
     }
+    #pragma omp parallel for private(i, remainder, div, mod, digit) shared(digits)
     for (i = 1; i <= n; ++i) {
         remainder = 1;
         for (digit = 0; digit < d + 11 && remainder; ++digit) {
