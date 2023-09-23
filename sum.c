@@ -13,7 +13,6 @@
 
 #define DIGITS 300
 
-
 void sum(char* output, const long unsigned int d, const long unsigned int n) {
     long unsigned int digit, i, remainder, div, mod;
     long unsigned int digits[d + 11];
