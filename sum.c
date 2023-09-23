@@ -55,7 +55,7 @@ int main() {
         sum(output, DIGITS, n);
         finish = omp_get_wtime();  
         fprintf(stdout,"%s\n",output);
-        fprintf(stderr,"%lu %lf\n",n,finish-start);
+        fprintf(stderr,"Tempo utilizado: %lu %lf\n",n,finish-start);
     }
     return 0;
 }
