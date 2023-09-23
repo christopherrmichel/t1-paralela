@@ -47,7 +47,7 @@ void sum(char* output, const long unsigned int d, const long unsigned int n) {
 }
 
 int main() {
-    long unsigned int n;
+    long unsigned int n = 10;
     double start, finish;
     char output[DIGITS + 10]; // extra chars to avoid error
     for (n=START; n<=END; n+=STEP) {
