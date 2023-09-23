@@ -32,12 +32,9 @@ void sum(char* output, const long unsigned int d, const long unsigned int n) {
             remainder = mod * 10;
         }
 
-        #pragma omp critical
-        {
-            for (digit = 0; digit < d + 11; ++digit) {
-                digits[digit] += digits[digit - 1] / 10;
-                digits[digit - 1] %= 10;
-            }
+        for (digit = 0; digit < d + 11; ++digit) {
+            digits[digit] += digits[digit - 1] / 10;
+            digits[digit - 1] %= 10;
         }
     }
 
