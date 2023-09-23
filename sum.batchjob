@@ -81,28 +81,20 @@ echo "1 processos"
 mpirun -np 1 ./sum
 echo
 
+echo "2 processos"
+mpirun -np 2 ./sum
+echo
+
+echo "4 processos"
+mpirun -np 4 ./sum
+echo
+
 echo "8 processos"
 mpirun -np 8 ./sum
 echo
 
 echo "16 processos"
 mpirun -np 16 ./sum
-echo
-
-echo "32 processos"
-mpirun -np 32 ./sum
-echo
-
-echo "8 processos (bynode)"
-mpirun --map-by node -np 8 ./sum
-echo
-
-echo "16 processos (bynode)"
-mpirun --map-by node -np 16 ./sum
-echo
-
-echo "32 processos (bynode)"
-mpirun --map-by node -np 32 ./sum
 echo
 
 ################
