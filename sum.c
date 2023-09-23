@@ -9,7 +9,7 @@
 
 #define START  1
 #define STEP   1
-#define END   10
+#define END   50
 
 #define DIGITS 10
 
@@ -50,12 +50,14 @@ int main() {
     long unsigned int n;
     double start, finish;
     char output[DIGITS + 10]; // extra chars to avoid error
+    start = omp_get_wtime();
     for (n=START; n<=END; n+=STEP) {
-        start = omp_get_wtime();
         sum(output, DIGITS, n);
-        finish = omp_get_wtime();  
+          
         fprintf(stdout,"%s\n",output);
-        fprintf(stderr,"Tempo utilizado: %lu %lf\n",n,finish-start);
+        
     }
+    finish = omp_get_wtime();
+    fprintf(stderr,"Tempo utilizado: %lu %lf\n",n,finish-start);
     return 0;
 }
