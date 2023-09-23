@@ -7,11 +7,11 @@
 #include <string.h>
 #include <omp.h>
 
-#define START  100000
-#define STEP   100000
-#define END   1000000
+#define START  1
+#define STEP   1
+#define END   10
 
-#define DIGITS 10
+#define DIGITS 1000
 
 void sum(char* output, const long unsigned int d, const long unsigned int n) {
     long unsigned int digit, i, remainder, div, mod;
@@ -47,7 +47,7 @@ void sum(char* output, const long unsigned int d, const long unsigned int n) {
 }
 
 int main() {
-    long unsigned int n = 10;
+    long unsigned int n;
     double start, finish;
     char output[DIGITS + 10]; // extra chars to avoid error
     for (n=START; n<=END; n+=STEP) {
