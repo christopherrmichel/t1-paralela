@@ -11,7 +11,7 @@
 #define STEP   1
 #define END   10
 
-#define DIGITS 1000
+#define DIGITS 10
 
 void sum(char* output, const long unsigned int d, const long unsigned int n) {
     long unsigned int digit, i, remainder, div, mod;
