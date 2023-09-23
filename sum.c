@@ -11,7 +11,7 @@
 #define STEP   100000
 #define END   1000000
 
-#define DIGITS 300
+#define DIGITS 100
 
 void sum(char* output, const long unsigned int d, const long unsigned int n) {
     long unsigned int digit, i, remainder, div, mod;
@@ -19,24 +19,25 @@ void sum(char* output, const long unsigned int d, const long unsigned int n) {
     for (digit = 0; digit < d + 11; ++digit) {
         digits[digit] = 0;
     }
-    #pragma omp parallel for private(remainder, div, mod) shared(digits)
     for (i = 1; i <= n; ++i) {
         remainder = 1;
         for (digit = 0; digit < d + 11 && remainder; ++digit) {
             div = remainder / i;
             mod = remainder % i;
-            #pragma omp atomic
             digits[digit] += div;
             remainder = mod * 10;
         }
     }
-    #pragma omp parallel for reduction(+:digits)
     for (i = d + 11 - 1; i > 0; --i) {
         digits[i - 1] += digits[i] / 10;
         digits[i] %= 10;
     }
     if (digits[d + 1] >= 5) {
         ++digits[d];
+    }
+    for (i = d; i > 0; --i) {
+        digits[i - 1] += digits[i] / 10;
+        digits[i] %= 10;
     }
     sprintf(output,"%lu.",digits[0]);
     unsigned long int t = strlen(output);
