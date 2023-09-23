@@ -16,10 +16,13 @@
 void sum(char* output, const long unsigned int d, const long unsigned int n) {
     long unsigned int digit, i, remainder, div, mod;
     long unsigned int digits[d + 11];
+
+    #pragma omp parallel for
     for (digit = 0; digit < d + 11; ++digit) {
         digits[digit] = 0;
     }
-    #pragma omp parallel for private(i, remainder, div, mod, digit) shared(digits)
+
+    #pragma omp parallel for private(remainder, digit, div, mod)
     for (i = 1; i <= n; ++i) {
         remainder = 1;
         for (digit = 0; digit < d + 11 && remainder; ++digit) {
