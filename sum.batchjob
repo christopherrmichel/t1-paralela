@@ -23,6 +23,6 @@ export OMP_NUM_THREADS=$1
 
 rm -f sum
 gcc sum.c -o sum -fopenmp
-./sum-parallel > "output-parallel-$1-threads.txt" 2> "times-parallel-$1-threads.txt"
+./sum > "output-parallel-$1-threads.out" 2> "times-parallel-$1-threads.out"
 
 echo Final time is `date`.
