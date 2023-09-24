@@ -23,6 +23,6 @@ export OMP_NUM_THREADS=$1
 
 rm -f sum-versao-inicial
 gcc sum-versao-inicial.c -o sum-versao-inicial -fopenmp
-./sum-standard > "saida-versao-inicial.txt" 2> "tempo-total-versao-inicial.txt"
+./sum-standard > "saida-versao-inicial.out" 2> "tempo-total-versao-inicial.out"
 
 echo Final time is `date`.
