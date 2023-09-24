@@ -21,9 +21,8 @@ echo $SLURM_JOB_ID
 # Set number of threads.
 export OMP_NUM_THREADS=$1
 
-rm -f sum
-gcc sum.c -o sum -fopenmp
-./sum > "saida-versao-paralela-$1-threads.out" 2> "tempo-total-versao-paralela-$1-threads.out"
+rm -f sum-versao-inicial
+gcc sum-versao-inicial.c -o sum-versao-inicial -fopenmp
+./sum-standard > "saida-versao-inicial.txt" 2> "tempo-total-versao-inicial.txt"
 
 echo Final time is `date`.
-
